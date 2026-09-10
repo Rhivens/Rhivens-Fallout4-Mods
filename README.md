@@ -39,6 +39,23 @@ Only projects intended for public distribution will be placed in this repository
 
 ---
 
+## Modding & Permissions
+
+My mods are shared with a community-first approach.
+
+Unless a specific mod page explicitly states otherwise:
+
+- **Translations are allowed.**
+- **Patches, forks and modified versions are allowed.**
+- **You may copy, modify and improve the mod**, provided proper credit is given to the original project and author.
+- If you redistribute a modified version, patch or translation, please clearly state that it is based on the original mod.
+- Suggestions, fixes and proposed improvements are welcome, but their inclusion in the official version is **not guaranteed** and will depend on my interest, available time and the scope of the change.
+- **Source files will be provided whenever reasonably possible** to make maintenance, translation and further development easier for the community.
+
+These permissions apply to my own work only. Third-party assets, frameworks or components remain subject to the permissions and licenses of their respective authors.
+
+---
+
 ## Compatibility Philosophy
 
 I try to keep my mods as self-contained and lightweight as possible.
