@@ -8,7 +8,6 @@ GlobalVariable Property RHI_NDN_ChancePlayerSettlement Auto Const Mandatory
 GlobalVariable Property RHI_NDN_ChanceTown Auto Const Mandatory
 GlobalVariable Property RHI_NDN_ChanceDungeon Auto Const Mandatory
 GlobalVariable Property RHI_NDN_ChanceOutdoor Auto Const Mandatory
-GlobalVariable Property RHI_NDN_AttackerCount Auto Const Mandatory
 
 String Property MOD_NAME = "RHI_NDN" AutoReadOnly
 
@@ -42,7 +41,6 @@ Function UpdateSettings()
     LoadSetting(RHI_NDN_ChanceTown, "fTown:Chances", 0.0, 100.0)
     LoadSetting(RHI_NDN_ChanceDungeon, "fDungeon:Chances", 0.0, 100.0)
     LoadSetting(RHI_NDN_ChanceOutdoor, "fOutdoor:Chances", 0.0, 100.0)
-    LoadSetting(RHI_NDN_AttackerCount, "fAttackerCount:Scene", 0.0, 2.0)
 EndFunction
 
 Function LoadSetting(GlobalVariable akGlobal, String asSetting, Float afMinimum, Float afMaximum)
