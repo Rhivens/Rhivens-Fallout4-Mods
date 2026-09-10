@@ -10,7 +10,7 @@
       "html": true
     },
     {
-      "text": "Version de diagnostic 0.0.1 - aucun événement réel n'est lancé.",
+      "text": "Version 1.0",
       "type": "text"
     },
     { "type": "spacer" },
@@ -60,26 +60,6 @@
           "type": "slider",
           "help": "Chance d'événement pour les lieux qui ne correspondent à aucune autre catégorie.",
           "valueOptions": { "min": 0, "max": 100, "step": 1, "sourceType": "ModSettingFloat" }
-        }
-      ]
-    },
-    {
-      "pageDisplayName": "Scène",
-      "content": [
-        {
-          "id": "fAttackerCount:Scene",
-          "text": "Nombre d'agresseurs",
-          "type": "stepper",
-          "help": "Choisit un, deux ou un nombre aléatoire d'agresseurs.",
-          "valueOptions": {
-            "options": ["Aléatoire", "1", "2"],
-            "sourceType": "ModSettingFloat"
-          }
-        },
-        { "type": "spacer" },
-        {
-          "text": "Les agresseurs resteront techniquement neutres. Les compagnons proches seront temporairement placés en attente.",
-          "type": "text"
         }
       ]
     }
