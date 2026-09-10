@@ -1,0 +1,87 @@
+{
+  "modName": "RHI_NDN",
+  "displayName": "NORA Dangerous Nights - NAF",
+  "minMcmVersion": 3,
+  "pluginRequirements": ["RHI_NDN.esp"],
+  "content": [
+    {
+      "text": "<font size=\"36\"><p align=\"center\">NORA Dangerous Nights - NAF</p></font>",
+      "type": "text",
+      "html": true
+    },
+    {
+      "text": "Version de diagnostic 0.0.1 - aucun événement réel n'est lancé.",
+      "type": "text"
+    },
+    { "type": "spacer" },
+    {
+      "id": "fEnabled:Global",
+      "text": "Mod activé",
+      "type": "switcher",
+      "help": "Active ou désactive la détection des réveils.",
+      "valueOptions": { "sourceType": "ModSettingFloat" }
+    },
+    {
+      "id": "fDebug:Global",
+      "text": "Mode débogage",
+      "type": "switcher",
+      "help": "Affiche les résultats des tests à l'écran et dans le journal Papyrus.",
+      "valueOptions": { "sourceType": "ModSettingFloat" }
+    }
+  ],
+  "pages": [
+    {
+      "pageDisplayName": "Chances",
+      "content": [
+        {
+          "id": "fPlayerSettlement:Chances",
+          "text": "Colonie du joueur",
+          "type": "slider",
+          "help": "Chance d'événement après un réveil dans une colonie possédée par le joueur.",
+          "valueOptions": { "min": 0, "max": 100, "step": 1, "sourceType": "ModSettingFloat" }
+        },
+        {
+          "id": "fTown:Chances",
+          "text": "Ville ou colonie PNJ",
+          "type": "slider",
+          "help": "Chance d'événement après un réveil dans une ville ou une colonie non possédée.",
+          "valueOptions": { "min": 0, "max": 100, "step": 1, "sourceType": "ModSettingFloat" }
+        },
+        {
+          "id": "fDungeon:Chances",
+          "text": "Donjon",
+          "type": "slider",
+          "help": "Chance d'événement après un réveil dans un donjon.",
+          "valueOptions": { "min": 0, "max": 100, "step": 1, "sourceType": "ModSettingFloat" }
+        },
+        {
+          "id": "fOutdoor:Chances",
+          "text": "Extérieur ou autre lieu",
+          "type": "slider",
+          "help": "Chance d'événement pour les lieux qui ne correspondent à aucune autre catégorie.",
+          "valueOptions": { "min": 0, "max": 100, "step": 1, "sourceType": "ModSettingFloat" }
+        }
+      ]
+    },
+    {
+      "pageDisplayName": "Scène",
+      "content": [
+        {
+          "id": "fAttackerCount:Scene",
+          "text": "Nombre d'agresseurs",
+          "type": "stepper",
+          "help": "Choisit un, deux ou un nombre aléatoire d'agresseurs.",
+          "valueOptions": {
+            "options": ["Aléatoire", "1", "2"],
+            "sourceType": "ModSettingFloat"
+          }
+        },
+        { "type": "spacer" },
+        {
+          "text": "Les agresseurs resteront techniquement neutres. Les compagnons proches seront temporairement placés en attente.",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
