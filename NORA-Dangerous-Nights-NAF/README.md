@@ -157,4 +157,4 @@ See [`CHANGELOG.md`](CHANGELOG.md) for release history.
 
 ## Release Links
 
-LoversLab release link will be added here once the public file page is online.
+- LoversLab: https://www.loverslab.com/files/file/51420-nora-dangerous-nights-naf/
