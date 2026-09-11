@@ -1,5 +1,7 @@
 # Wash That Body – Player Blood Cleaner
 
+![Wash That Body - Player Blood Cleaner](Wash%20That%20Body%20-%20Player%20Blood%20Cleaner%20-%20Banner.png)
+
 **Wash That Body** is a lightweight F4SE plugin that manually removes blood decals from the player character without cleaning nearby NPCs or removing tattoos, makeup, tints, or body overlays.
 
 ## Status
