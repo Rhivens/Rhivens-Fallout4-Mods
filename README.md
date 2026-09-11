@@ -10,6 +10,14 @@ Most projects here are created and tested in a heavily modded **Fallout 4 OldGen
 
 ## Published Mods
 
+### Wash That Body – Player Blood Cleaner
+
+A lightweight F4SE plugin that manually removes blood decals from the player character while preserving tattoos, makeup, tints and body overlays. It does not clean nearby NPCs and does not require an ESP, Papyrus script, MCM or Wash That Blood Off.
+
+**Status:** version 0.2.2 tested successfully on Fallout 4 OldGen 1.10.163 / F4SE 0.6.23.
+
+Project folder: [`Wash-That-Body/`](Wash-That-Body/)
+
 ### NORA Dangerous Nights - NAF
 
 A lightweight NAF-based wake-up encounter mod inspired by the general concept of *Dangerous Nights*, but built as an independent project without using the original plugin as a master.
