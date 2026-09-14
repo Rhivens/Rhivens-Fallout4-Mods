@@ -2,6 +2,10 @@
 
 A lightweight Fallout 4 OldGen mod that adds dangerous wake-up encounters built around NAF.
 
+## Status
+
+**Publicly released on [LoversLab](https://www.loverslab.com/files/file/51420-nora-dangerous-nights-naf/).**
+
 ## Description
 
 **NORA Dangerous Nights - NAF** is a standalone wake-up encounter mod inspired by the general idea behind Dangerous Nights, but rebuilt independently for a NAF-based Fallout 4 setup.
@@ -157,4 +161,4 @@ See [`CHANGELOG.md`](CHANGELOG.md) for release history.
 
 ## Release Links
 
-- LoversLab: https://www.loverslab.com/files/file/51420-nora-dangerous-nights-naf/
+- [LoversLab release page](https://www.loverslab.com/files/file/51420-nora-dangerous-nights-naf/)
