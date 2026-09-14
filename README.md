@@ -18,6 +18,8 @@ A lightweight F4SE plugin that manually removes blood decals from the player cha
 
 Project folder: [`Wash-That-Body/`](Wash-That-Body/)
 
+Release page: [Nexus Mods](https://www.nexusmods.com/fallout4/mods/108941)
+
 ### NORA Dangerous Nights - NAF
 
 A lightweight NAF-based wake-up encounter mod inspired by the general concept of *Dangerous Nights*, but built as an independent project without using the original plugin as a master.
@@ -35,7 +37,9 @@ Main features include:
 
 **Status:** released publicly on LoversLab.
 
-Project folder: [`NORA-Dangerous-Nights-NAF/`](NORA-Dangerous-Nights-NAF/)\n\nRelease page: [LoversLab](https://www.loverslab.com/files/file/51420-nora-dangerous-nights-naf/)
+Project folder: [`NORA-Dangerous-Nights-NAF/`](NORA-Dangerous-Nights-NAF/)
+
+Release page: [LoversLab](https://www.loverslab.com/files/file/51420-nora-dangerous-nights-naf/)
 
 ---
 
