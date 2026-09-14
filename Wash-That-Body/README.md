@@ -99,6 +99,10 @@ The mod should be compatible with most blood, texture, body, tattoo, and overlay
 
 Wash That Body contains its own independently implemented cleanup routine and does not redistribute Wash That Blood Off or any of its assets.
 
+## Changelog
+
+See [`CHANGELOG.md`](CHANGELOG.md) for the documented version history.
+
 ## Permissions
 
 The repository-wide modding and redistribution permissions apply to this project. Third-party frameworks and components remain subject to their respective licenses.
