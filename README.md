@@ -33,9 +33,9 @@ Main features include:
 - MCM configuration;
 - separate French translation.
 
-**Status:** preparing public release.
+**Status:** released publicly on LoversLab.
 
-Project folder: `NORA-Dangerous-Nights-NAF/`
+Project folder: [`NORA-Dangerous-Nights-NAF/`](NORA-Dangerous-Nights-NAF/)\n\nRelease page: [LoversLab](https://www.loverslab.com/files/file/51420-nora-dangerous-nights-naf/)
 
 ---
 
