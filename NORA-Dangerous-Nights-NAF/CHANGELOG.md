@@ -1,8 +1,8 @@
 # Changelog — NORA Dangerous Nights - NAF
 
-## Upcoming public release
+## Initial public release
 
-- Initial public release preparation.
+- Initial public release on LoversLab.
 - Standalone wake-up encounter system.
 - Location-based probability handling.
 - Random attacker selection.
