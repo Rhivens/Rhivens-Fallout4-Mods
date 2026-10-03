@@ -4,8 +4,8 @@ A lightweight Fallout 4 OldGen wake-up encounter mod built around NAF.
 
 ## Status
 
-**Current version: 1.1.0**  
-The public release is available on [LoversLab](https://www.loverslab.com/files/file/51420-nora-dangerous-nights-naf/).
+**Version 1.1.0 — prepared for publication**  
+The project page is available on [LoversLab](https://www.loverslab.com/files/file/51420-nora-dangerous-nights-naf/).
 
 ## Description
 
