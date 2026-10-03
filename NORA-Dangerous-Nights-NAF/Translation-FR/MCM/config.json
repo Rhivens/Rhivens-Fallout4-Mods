@@ -1,0 +1,136 @@
+{
+  "modName": "RHI_NDN",
+  "displayName": "NORA Dangerous Nights - NAF",
+  "minMcmVersion": 3,
+  "pluginRequirements": [
+    "RHI_NDN.esp"
+  ],
+  "content": [
+    {
+      "text": "<font size=\"36\"><p align=\"center\">NORA Dangerous Nights - NAF</p></font>",
+      "type": "text",
+      "html": true
+    },
+    {
+      "text": "Version 0.18 RC1",
+      "type": "text"
+    },
+    {
+      "type": "spacer"
+    },
+    {
+      "id": "fEnabled:Global",
+      "text": "Mod activé",
+      "type": "switcher",
+      "help": "Active ou désactive la détection des événements de réveil.",
+      "valueOptions": {
+        "sourceType": "ModSettingFloat"
+      }
+    },
+    {
+      "id": "fDebug:Global",
+      "text": "Mode débogage",
+      "type": "switcher",
+      "help": "Affiche les résultats des tests à l'écran et dans le journal Papyrus.",
+      "valueOptions": {
+        "sourceType": "ModSettingFloat"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "pageDisplayName": "Chances",
+      "content": [
+        {
+          "id": "fPlayerSettlement:Chances",
+          "text": "Colonie de la joueuse",
+          "type": "slider",
+          "help": "Probabilité d'un événement après un réveil dans une colonie appartenant à la joueuse.",
+          "valueOptions": {
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "sourceType": "ModSettingFloat"
+          }
+        },
+        {
+          "id": "fTown:Chances",
+          "text": "Ville ou colonie de PNJ",
+          "type": "slider",
+          "help": "Probabilité d'un événement après un réveil dans une ville ou une colonie n'appartenant pas à la joueuse.",
+          "valueOptions": {
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "sourceType": "ModSettingFloat"
+          }
+        },
+        {
+          "id": "fDungeon:Chances",
+          "text": "Donjon",
+          "type": "slider",
+          "help": "Probabilité d'un événement après un réveil dans un donjon.",
+          "valueOptions": {
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "sourceType": "ModSettingFloat"
+          }
+        },
+        {
+          "id": "fOutdoor:Chances",
+          "text": "Extérieur ou autre lieu",
+          "type": "slider",
+          "help": "Probabilité d'un événement pour les lieux ne correspondant à aucune autre catégorie.",
+          "valueOptions": {
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "sourceType": "ModSettingFloat"
+          }
+        }
+      ]
+    },
+    {
+      "pageDisplayName": "Rencontre",
+      "content": [
+        {
+          "id": "fMaxAttackers:Encounter",
+          "text": "Nombre maximum d'agresseurs",
+          "type": "slider",
+          "help": "Définit le nombre maximal d'agresseurs pouvant apparaître. Le nombre réel est choisi aléatoirement entre 1 et cette valeur.",
+          "valueOptions": {
+            "min": 1,
+            "max": 3,
+            "step": 1,
+            "sourceType": "ModSettingFloat"
+          }
+        }
+      ]
+    },
+    {
+      "pageDisplayName": "Pervert",
+      "content": [
+        {
+          "text": "Intégration facultative. Nécessite Pervert - Immersive Prostitution and Harassment v0.4.1 ou version ultérieure. Lorsqu'il est déclenché, Pervert gère l'enlèvement, le donjon, les acteurs, les scènes, le transport de retour et le nettoyage. NORA Dangerous Nights ne fait pas apparaître ses propres agresseurs.",
+          "type": "text"
+        },
+        {
+          "type": "spacer"
+        },
+        {
+          "id": "fPervertChance:Pervert",
+          "text": "Probabilité d'enlèvement par Pervert",
+          "type": "slider",
+          "help": "Probabilité qu'un événement de réveil admissible soit transmis au scénario d'enlèvement involontaire de Pervert. Ce tirage est effectué avant les probabilités normales de lieu de NDN. Réglez cette valeur sur 0 pour désactiver l'intégration.",
+          "valueOptions": {
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "sourceType": "ModSettingFloat"
+          }
+        }
+      ]
+    }
+  ]
+}
