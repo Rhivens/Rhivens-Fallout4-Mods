@@ -1,6 +1,6 @@
 # Traduction française — NORA Dangerous Nights - NAF
 
-Version correspondante : **0.18 RC1**
+Version correspondante : **1.1.0**
 
 Cette traduction doit être installée **après le mod principal anglais de la même version** et gagner tous les conflits dans le gestionnaire de mods.
 
@@ -21,7 +21,7 @@ RHI_NDN.esp
 
 ## Installation
 
-1. Installer **NORA Dangerous Nights - NAF 0.18 RC1**.
+1. Installer **NORA Dangerous Nights - NAF 1.1.0**.
 2. Installer ensuite l’archive française.
 3. Autoriser la traduction à remplacer les cinq fichiers correspondants.
 4. Ne pas utiliser cette traduction avec une autre version du mod principal.
@@ -39,7 +39,7 @@ Les fichiers binaires ESP/PEX sont fournis dans l’archive française distribu�
 
 - archive ZIP testée sans erreur ;
 - structure technique du JSON identique à la version anglaise ;
-- version MCM : `0.18 RC1` ;
+- version MCM : `1.1.0` ;
 - section `[Pervert]` et clés `BeforeStart`, `OnArrival`, `AfterReturn` conservées ;
 - textes enregistrés en UTF-8 et maintenus sur une seule ligne ;
 - terminologie harmonisée sur **agresseur(s)** ;
