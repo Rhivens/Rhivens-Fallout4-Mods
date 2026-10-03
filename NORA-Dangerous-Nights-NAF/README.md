@@ -4,8 +4,8 @@ A lightweight Fallout 4 OldGen wake-up encounter mod built around NAF.
 
 ## Status
 
-**Current release candidate: Version 0.18 RC1**  
-The existing public release is available on [LoversLab](https://www.loverslab.com/files/file/51420-nora-dangerous-nights-naf/); the v0.18 RC1 package is being prepared for publication.
+**Current version: 1.1.0**  
+The public release is available on [LoversLab](https://www.loverslab.com/files/file/51420-nora-dangerous-nights-naf/).
 
 ## Description
 
@@ -107,7 +107,7 @@ The plugin is ESL-flagged and does not consume a normal full plugin slot.
 
 Replace the previous version with the new one unless the release notes explicitly state otherwise. Do not compact the released plugin's FormIDs again.
 
-Version 0.18 RC1 adds new persistent settings and substantial controller changes. Keep a backup save before updating any scripted mod.
+Version 1.1.0 adds new persistent settings and substantial controller changes. Keep a backup save before updating any scripted mod.
 
 ## Uninstallation
 
@@ -131,7 +131,7 @@ Sexual Harassment is not strictly incompatible, but simultaneous wake-up events 
 
 ### AAF-only environments
 
-Users have reported that the earlier stable release works correctly in AAF-only environments. Version 0.18 RC1 was developed and stress-tested primarily with NAF/NAFBridge, including cold loading saves created after Submit and Resist encounters.
+Users have reported that the earlier stable release works correctly in AAF-only environments. Version 1.1.0 was developed and stress-tested primarily with NAF/NAFBridge, including cold loading saves created after Submit and Resist encounters.
 
 ### Heavily modded setups
 
