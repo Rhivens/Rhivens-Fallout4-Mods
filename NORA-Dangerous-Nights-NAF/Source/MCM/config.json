@@ -10,22 +10,22 @@
       "html": true
     },
     {
-      "text": "Version 1.0",
+      "text": "Version 0.18 RC1",
       "type": "text"
     },
     { "type": "spacer" },
     {
       "id": "fEnabled:Global",
-      "text": "Mod activé",
+      "text": "Mod enabled",
       "type": "switcher",
-      "help": "Active ou désactive la détection des réveils.",
+      "help": "Enables or disables wake-up event detection.",
       "valueOptions": { "sourceType": "ModSettingFloat" }
     },
     {
       "id": "fDebug:Global",
-      "text": "Mode débogage",
+      "text": "Debug mode",
       "type": "switcher",
-      "help": "Affiche les résultats des tests à l'écran et dans le journal Papyrus.",
+      "help": "Displays test results on screen and in the Papyrus log.",
       "valueOptions": { "sourceType": "ModSettingFloat" }
     }
   ],
@@ -35,30 +35,59 @@
       "content": [
         {
           "id": "fPlayerSettlement:Chances",
-          "text": "Colonie du joueur",
+          "text": "Player settlement",
           "type": "slider",
-          "help": "Chance d'événement après un réveil dans une colonie possédée par le joueur.",
+          "help": "Event chance after waking up in a settlement owned by the player.",
           "valueOptions": { "min": 0, "max": 100, "step": 1, "sourceType": "ModSettingFloat" }
         },
         {
           "id": "fTown:Chances",
-          "text": "Ville ou colonie PNJ",
+          "text": "Town or NPC settlement",
           "type": "slider",
-          "help": "Chance d'événement après un réveil dans une ville ou une colonie non possédée.",
+          "help": "Event chance after waking up in a town or a settlement not owned by the player.",
           "valueOptions": { "min": 0, "max": 100, "step": 1, "sourceType": "ModSettingFloat" }
         },
         {
           "id": "fDungeon:Chances",
-          "text": "Donjon",
+          "text": "Dungeon",
           "type": "slider",
-          "help": "Chance d'événement après un réveil dans un donjon.",
+          "help": "Event chance after waking up in a dungeon.",
           "valueOptions": { "min": 0, "max": 100, "step": 1, "sourceType": "ModSettingFloat" }
         },
         {
           "id": "fOutdoor:Chances",
-          "text": "Extérieur ou autre lieu",
+          "text": "Outdoor or other location",
           "type": "slider",
-          "help": "Chance d'événement pour les lieux qui ne correspondent à aucune autre catégorie.",
+          "help": "Event chance for locations that do not match any other category.",
+          "valueOptions": { "min": 0, "max": 100, "step": 1, "sourceType": "ModSettingFloat" }
+        }
+      ]
+    },
+    {
+      "pageDisplayName": "Encounter",
+      "content": [
+        {
+          "id": "fMaxAttackers:Encounter",
+          "text": "Maximum attackers",
+          "type": "slider",
+          "help": "Sets the maximum number of attackers that can appear. The actual number is randomly selected between 1 and this value.",
+          "valueOptions": { "min": 1, "max": 3, "step": 1, "sourceType": "ModSettingFloat" }
+        }
+      ]
+    },
+    {
+      "pageDisplayName": "Pervert",
+      "content": [
+        {
+          "text": "Optional integration. Requires Pervert - Immersive Prostitution and Harassment v0.4.1 or later. When triggered, Pervert manages the abduction, dungeon, actors, scenes, return transport, and cleanup. NORA Dangerous Nights does not spawn its own attackers.",
+          "type": "text"
+        },
+        { "type": "spacer" },
+        {
+          "id": "fPervertChance:Pervert",
+          "text": "Pervert abduction chance",
+          "type": "slider",
+          "help": "Chance that an eligible wake-up event is handed over to Pervert's involuntary abduction scenario. This roll is evaluated before the normal NDN location chances. Set to 0 to disable the integration.",
           "valueOptions": { "min": 0, "max": 100, "step": 1, "sourceType": "ModSettingFloat" }
         }
       ]
