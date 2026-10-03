@@ -1,147 +1,145 @@
 # NORA Dangerous Nights - NAF
 
-A lightweight Fallout 4 OldGen mod that adds dangerous wake-up encounters built around NAF.
+A lightweight Fallout 4 OldGen wake-up encounter mod built around NAF.
 
 ## Status
 
-**Publicly released on [LoversLab](https://www.loverslab.com/files/file/51420-nora-dangerous-nights-naf/).**
+**Current release candidate: Version 0.18 RC1**  
+**Released on [LoversLab](https://www.loverslab.com/files/file/51420-nora-dangerous-nights-naf/).**
 
 ## Description
 
-**NORA Dangerous Nights - NAF** is a standalone wake-up encounter mod inspired by the general idea behind Dangerous Nights, but rebuilt independently for a NAF-based Fallout 4 setup.
+**NORA Dangerous Nights - NAF** is a standalone wake-up encounter mod inspired by the general concept of Dangerous Nights and rebuilt independently for a NAF-based Fallout 4 setup.
 
 It does **not** use the original Dangerous Nights plugin as a master or dependency.
 
-After the player sleeps, the mod checks the current location, performs a configurable probability roll, and may spawn one of four attackers. A short dialogue then offers two possible responses: **Submit** or **Resist**.
+After the player sleeps, NORA NDN can either:
+
+- start its own configurable encounter with one to three randomly selected attackers; or
+- optionally hand the wake-up event over to **Pervert – Immersive Prostitution and Harassment**.
 
 Core flow:
 
 ```text
-Sleep
-  -> Wake up
-  -> Location classification
-  -> Chance roll
-  -> Random attacker
-  -> Dialogue
-      -> Submit
-      -> Resist
+Sleep -> Wake up -> Optional Pervert roll
+                    | accepted -> Pervert handles the event
+                    | otherwise -> Location chance roll
+                                   -> 1–3 attackers
+                                   -> Submit or Resist
 ```
+
+## Main Features
+
+- Location-based encounter chances for player settlements, NPC settlements, dungeons and outdoor/other locations.
+- One to three attackers, with the maximum configurable in the MCM.
+- Four custom attacker ActorBases selected without duplicates for each encounter.
+- Automatic approach, safety repositioning and dialogue-camera handling.
+- Submit / Resist dialogue flow.
+- Multi-actor NAF scene requests through NAFBridge.
+- AAF Violate integration for defeat after resistance.
+- Engine-safe delayed cleanup designed to avoid cold-load save crashes after NAF scenes.
+- Optional Pervert v0.4.1+ hand-off with configurable probability and narrative messages.
+- Debug notifications can be enabled or disabled in the MCM.
+- Fast JSON-based MCM powered by the F4SE MCM framework.
+- ESL-flagged ESP; xEdit **Check for Errors: 0**.
 
 ### Submit
 
-The attacker immediately starts an aggressive NAF scene through NAFBridge. The spawned attacker is removed only after the real scene-end event has been received and NAFBridge has completed its restoration work.
+All available encounter actors are sent to NAFBridge. NORA NDN waits for the real scene-end event, gives NAFBridge time to restore actors, releases the group, and only then begins deferred engine-safe deletion.
+
+Users need compatible animation packs that include animations for the desired number of participants. **NORA Dangerous Nights does not include animations.** If no compatible multi-participant animation is installed, NAF may be unable to start a scene with two or three attackers.
 
 ### Resist
 
-The encounter becomes a real combat situation.
+The encounter becomes a real combat situation involving the whole group.
 
-Possible outcomes:
+- **Victory:** dead attackers are cleaned up safely.
+- **Escape:** the encounter ends once the remaining attackers are far enough away.
+- **Defeat:** AAF Violate takes over. NORA NDN waits for Violate's completion event before cleanup.
 
-- **Victory:** the attacker dies and the body is cleaned up shortly afterwards.
-- **Escape:** if the attacker gets far enough away, the encounter is abandoned and the attacker is removed.
-- **Defeat:** AAF Violate takes over the defeat sequence and NAF scene handling. NORA NDN waits for Violate to finish restoring the actors before cleaning up the attacker.
+### Optional Pervert Integration
 
-## Features
+The **Pervert abduction chance** is disabled by default (`0%`). When enabled and the roll succeeds, NORA NDN calls Pervert's API before evaluating its normal location chances.
 
-- Location-based encounter chances after sleeping.
-- Separate configurable chances for player settlements, towns/settlements, dungeons and outdoor/other locations.
-- Four custom attackers selected randomly.
-- Submit / Resist dialogue flow.
-- Direct NAF scene handling through NAFBridge.
-- AAF Violate integration for the Resist defeat branch.
-- Proper cleanup after NAF scenes, combat death, escape or Violate completion.
-- Player movement is locked during the dialogue while camera rotation remains available.
-- MCM configuration.
-- ESP compacted and ESL-flagged.
-- xEdit Check for Errors: 0.
+Pervert then owns the abduction, dungeon selection, actors, scenes, return transport and cleanup. NORA NDN does not spawn attackers for that branch.
 
-## Hard Requirements
+This integration:
 
-This mod was developed and tested with:
+- requires **Pervert – Immersive Prostitution and Harassment v0.4.1 or later**;
+- dynamically detects `pervert.esp` and calls its API;
+- does not add Pervert as a plugin master;
+- contains no Pervert assets, scripts or data;
+- falls back to the normal NORA NDN evaluation if Pervert is missing, unavailable or rejects the request.
+
+The three narrative messages are stored in `Data\F4SE\Plugins\RHI_NDN_messages.ini`, making them easy to translate without recompiling the scripts.
+
+## Requirements
+
+### Hard Requirements
 
 - **Fallout 4 OldGen 1.10.163**
 - **F4SE 0.6.23**
-- **Mod Configuration Menu (MCM)**
+- **Mod Configuration Menu / F4SE MCM framework**
 - **NAF**
 - **NAFBridge**
 - **AAF Violate**
 
 AAF Violate is required because the Resist defeat branch uses its Papyrus script and completion event.
 
-## Soft / Recommended Requirements
+### Optional Requirements
 
-### Captive Tattoos / NAF-compatible tattoo systems
-
-NORA NDN does not directly apply tattoos.
-
-If your setup already contains a NAF-compatible tattoo system such as Captive Tattoos, aggressive scenes may trigger tattoos through that external ecosystem. No additional tattoo roll is performed by NORA NDN, avoiding duplicate applications.
+- **Pervert – Immersive Prostitution and Harassment v0.4.1+** — only required when the Pervert probability is set above 0%.
+- NAF-compatible tattoo systems such as Captive Tattoos. NORA NDN does not apply tattoos directly.
+- Compatible NAF animation packs, including multi-participant animations when using more than one attacker.
 
 ## Installation
 
 1. Install the mod with your preferred mod manager.
 2. Enable `RHI_NDN.esp`.
-3. Make sure all hard requirements are installed and working.
-4. Configure the encounter chances in the MCM if desired.
-5. **Disable the original Dangerous Nights mod** if it is installed.
+3. Make sure the hard requirements are installed and working.
+4. Configure encounter chances and the maximum attacker count in the MCM.
+5. Leave the Pervert chance at `0%` unless Pervert v0.4.1+ is installed and you want that integration.
+6. Disable the original Dangerous Nights mod if it is installed.
 
-The plugin is ESL-flagged and therefore does not consume a normal full plugin slot.
+The plugin is ESL-flagged and does not consume a normal full plugin slot.
 
 ## Updating
 
-When updating NORA NDN, replace the previous version with the new one unless release notes explicitly state otherwise.
+Replace the previous version with the new one unless the release notes explicitly state otherwise. Do not compact the released plugin's FormIDs again.
 
-Do not compact FormIDs again on an already released plugin.
+Version 0.18 RC1 adds new persistent settings and substantial controller changes. Keep a backup save before updating any scripted mod.
 
 ## Uninstallation
 
-Because NORA NDN uses a running controller quest and sleep events, uninstalling scripted mods mid-game should always be approached carefully.
-
-Recommended procedure:
-
-1. Make sure no NORA NDN encounter or NAF/Violate scene started by the mod is currently active.
-2. Disable NORA NDN from its MCM if possible.
-3. Create a manual save.
+1. Make sure no NORA NDN, NAF, Violate or Pervert event started by the mod is active.
+2. Disable NORA NDN in its MCM.
+3. Create a manual backup save.
 4. Remove the mod.
-5. Load the save, wait briefly, then create a new manual save.
-6. Keep the pre-uninstall save as a backup.
+5. Load the save, wait briefly, and create a new manual save.
 
-For the cleanest possible removal, returning to a save made before installing the mod remains the safest option.
+Returning to a save made before installing the mod remains the safest removal method.
 
-## Compatibility & Known Issues
+## Compatibility and Notes
 
-### Dangerous Nights
+### Original Dangerous Nights
 
-The original **Dangerous Nights 0.38** must be disabled.
+The original **Dangerous Nights 0.38** must be disabled. Running both systems can create competing wake-up events.
 
-It is not a master or requirement for NORA NDN. Running both mods at the same time would create two independent systems reacting to player sleep and may cause competing wake-up events.
+### Sexual Harassment and other wake-up systems
 
-### Sexual Harassment
+Sexual Harassment is not strictly incompatible, but simultaneous wake-up events can interfere with one another. In very complex setups, temporarily disabling other event systems before sleeping can help isolate conflicts.
 
-Sexual Harassment is **not strictly incompatible** with NORA NDN, but it may occasionally interfere if both mods trigger an event at the same time when the player wakes up.
+### AAF-only environments
 
-This was observed once during testing. Sexual Harassment is also known to be intrusive with other scene/event-driven mods, so users running complex NAF setups should keep this in mind.
-
-If necessary, temporarily disabling Sexual Harassment using its own hotkey before sleeping is an effective workaround.
+Users have reported that the earlier stable release works correctly in AAF-only environments. Version 0.18 RC1 was developed and stress-tested primarily with NAF/NAFBridge, including cold loading saves created after Submit and Resist encounters.
 
 ### Heavily modded setups
 
-This mod was created and tested in a heavily modded Fallout 4 environment. Because wake-up events, defeat systems and scene managers can overlap, compatibility cannot be guaranteed with every possible combination of mods.
+Wake-up handlers, defeat systems, camera controllers and scene managers can overlap. Compatibility with every possible mod combination cannot be guaranteed.
 
 ## Languages
 
-The original mod is developed in **English** for Creation Kit and scripting stability.
-
-A separate **French translation** is provided so that the main plugin remains easy to maintain and can also be translated into other languages.
-
-## Developer's Note
-
-This is a personal mod created for my own Fallout 4 setup and shared with the community because others may find it useful.
-
-Bug reports, technical feedback and improvement ideas are welcome, but support is provided on a best-effort basis depending on my available time and interest.
-
-Translations, patches, forks, modifications and improvements are allowed under the repository-wide permissions policy. Proper credit to the original mod is appreciated. Source files are provided whenever possible.
-
-See the main repository README for the full permissions policy.
+The original mod is developed in English for Creation Kit and scripting stability. A separate French translation is maintained for distribution.
 
 ## Credits
 
@@ -150,15 +148,20 @@ Thanks to the authors and maintainers of:
 - NAF
 - NAFBridge
 - AAF Violate
-- Mod Configuration Menu
-- the Fallout 4 modding community whose tools and documentation make projects like this possible
+- Mod Configuration Menu and the F4SE MCM framework
+- the Fallout 4 modding community
+
+Special thanks to **[riveth](https://www.loverslab.com/profile/8946296-riveth/)** for **Pervert – Immersive Prostitution and Harassment v0.4.1** and its public API/source. NORA NDN only performs a dynamic API hand-off; it includes no Pervert content and does not use Pervert as a master.
 
 The project was inspired by the general concept of Dangerous Nights, but NORA Dangerous Nights - NAF is an independent implementation and does not include or require the original plugin.
 
-## Changelog
+## Developer's Note
 
-See [`CHANGELOG.md`](CHANGELOG.md) for release history.
+This is a personal mod shared with the community because others may find it useful. Bug reports, technical feedback and improvement ideas are welcome, with support provided on a best-effort basis.
 
-## Release Links
+Translations, patches, forks, modifications and improvements are allowed under the repository-wide permissions policy. Proper credit is appreciated. Public source files are provided whenever possible.
 
+## Changelog and Release
+
+- [Changelog](CHANGELOG.md)
 - [LoversLab release page](https://www.loverslab.com/files/file/51420-nora-dangerous-nights-naf/)
