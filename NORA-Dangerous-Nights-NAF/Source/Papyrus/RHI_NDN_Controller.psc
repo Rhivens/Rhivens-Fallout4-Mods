@@ -1,5 +1,5 @@
 Scriptname RHI_NDN_Controller extends Quest
-; Version 0.18 RC1: load the Pervert narrative messages from
+; Public version 1.1.0 (development build 0.18 RC1): load the Pervert narrative messages from
 ; RHI_NDN_messages.ini, with the validated English text retained as fallback.
 
 Actor Property PlayerRef Auto Const Mandatory
