@@ -1,6 +1,6 @@
 # Changelog — NORA Dangerous Nights - NAF
 
-## Version 0.18 RC1 — 3 October 2026
+## Version 1.1.0 — 3 October 2026
 
 ### Added
 
