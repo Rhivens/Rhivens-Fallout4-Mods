@@ -8,6 +8,8 @@ GlobalVariable Property RHI_NDN_ChancePlayerSettlement Auto Const Mandatory
 GlobalVariable Property RHI_NDN_ChanceTown Auto Const Mandatory
 GlobalVariable Property RHI_NDN_ChanceDungeon Auto Const Mandatory
 GlobalVariable Property RHI_NDN_ChanceOutdoor Auto Const Mandatory
+GlobalVariable Property RHI_NDN_MaxAttackers Auto Const Mandatory
+GlobalVariable Property RHI_NDN_PervertChance Auto Const Mandatory
 
 String Property MOD_NAME = "RHI_NDN" AutoReadOnly
 
@@ -41,11 +43,13 @@ Function UpdateSettings()
     LoadSetting(RHI_NDN_ChanceTown, "fTown:Chances", 0.0, 100.0)
     LoadSetting(RHI_NDN_ChanceDungeon, "fDungeon:Chances", 0.0, 100.0)
     LoadSetting(RHI_NDN_ChanceOutdoor, "fOutdoor:Chances", 0.0, 100.0)
+    LoadSetting(RHI_NDN_MaxAttackers, "fMaxAttackers:Encounter", 1.0, 3.0)
+    LoadSetting(RHI_NDN_PervertChance, "fPervertChance:Pervert", 0.0, 100.0)
 EndFunction
 
 Function LoadSetting(GlobalVariable akGlobal, String asSetting, Float afMinimum, Float afMaximum)
     If !akGlobal
-        Debug.Trace("[RHI_NDN] Propriété Global manquante pour " + asSetting)
+        Debug.Trace("[RHI_NDN] Missing Global property for " + asSetting)
         Return
     EndIf
 
