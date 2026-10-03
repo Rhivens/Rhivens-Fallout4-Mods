@@ -1,6 +1,6 @@
 # Papyrus Sources
 
-This folder contains the public Papyrus source files for **NORA Dangerous Nights - NAF 0.18 RC1**.
+This folder contains the public Papyrus source files for **NORA Dangerous Nights - NAF 1.1.0**.
 
 ## Included sources
 
